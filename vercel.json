@@ -1,0 +1,28 @@
+
+{
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.4"
+    },
+    "api/1nso2ea.php": {
+      "runtime": "vercel-php@0.7.4"
+    }
+  },
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=86400"
+      },
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/api/1nso2ea.php",
+      "dest": "/api/1nso2ea.php"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ]
+}
